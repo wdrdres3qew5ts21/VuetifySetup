@@ -2,7 +2,7 @@
   <div id="app">
     <NavHeader style="position: fixed; z-index: 1;background-color: #e1e1e1;width: 100%">
     </NavHeader>
-    <BannerSlide></BannerSlide>
+    <BannerSlide @getHighHeader="getHighHeader" ref="BannerSlide"></BannerSlide>
     <router-view/>
     <NavFooter></NavFooter>
   </div>
@@ -12,9 +12,14 @@
 
 export default {
   name: 'App', //  ไม่รู้ทำไมแต่ว่าต้อง import รูปเข้ามาแบบนี้ถึงจะใช้ได้
+  data() {
+    return {
+      value: 0,
+    };
+  },
   methods: {
-    test() {
-
+    getHighHeader() {
+      this.value = 20;
     },
   },
 };
